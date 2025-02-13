@@ -4,33 +4,33 @@ import { useNavigate } from "react-router-dom";
 
 const blogData = [
   {
-    id: 1,
-    title: "How To Get People To Like Industry.",
-    category: "Business",
-    date: "26 April",
-    author: "John Doe",
+    id: "https://hub.countymaterials.com/news/16-reasons-to-choose-reinforced-concrete-pipes-for-storm-water-management",
+    title: "How RCC Pipes are Revolutionizing Water Management",
+    category: "Infrastructure",
+    date: "5 Sep",
+    author: "Admin",
     content:
-      "This blog provides insights on engaging with people in the industrial sector.",
+      "RCC pipes are transforming water management by providing durability, strength, and cost-effectiveness for large-scale projects.",
     imageUrl: "src/assets/pipes/img1.png",
   },
   {
-    id: 2,
-    title: "Why You Should Not Go To Industry.",
-    category: "Business",
-    date: "26 April",
-    author: "John Doe",
+    id: "https://www.investindia.gov.in/team-india-blogs/infrastructure-development-india",
+    title: "The Future of Infrastructure Development in India",
+    category: "Development",
+    date: "5 Sep",
+    author: "Admin",
     content:
-      "Discover the potential pitfalls of venturing into the industrial landscape.",
-    imageUrl: "src/assets/pipes/img5.png",
+      "With rapid urbanization, India's infrastructure sector is evolving with smart cities, sustainable construction, and modern RCC technologies.",
+    imageUrl: "src/assets/pipes/img2.png",
   },
   {
-    id: 3,
-    title: "The Shocking Revelation of Industry.",
-    category: "Modern",
-    date: "26 April",
-    author: "John Doe",
+    id: "https://hub.countymaterials.com/news/16-reasons-to-choose-reinforced-concrete-pipes-for-storm-water-management",
+    title: "Why Quality Matters: Choosing the Best RCC Pipes for Your Project",
+    category: "Construction",
+    date: "5 Sep",
+    author: "Admin",
     content:
-      "Unexpected facts about the industry sector revealed in this article.",
+      "Selecting high-quality RCC pipes ensures long-term performance, safety, and compliance with industry standards.",
     imageUrl: "src/assets/pipes/img3.png",
   },
 ];
@@ -51,41 +51,47 @@ function Blog() {
   );
 
   return (
-    <div className="mt-30 p-4 sm:p-8 px-6 bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600 mb-8 text-center">
-        Blog Section
+    <div className="mt-25 p-6 sm:p-10 bg-gray-50">
+      <h1 className="text-4xl font-extrabold text-blue-600 mb-8 text-center">
+        Latest Blog Updates
       </h1>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {paginatedData.map((blog) => (
+        {paginatedData.map((blog, index) => (
           <Card
-            key={blog.id}
+            key={blog?.index}
             hoverable
             cover={
               <img
                 alt={blog.title}
                 src={blog.imageUrl}
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-cover rounded-t-lg"
               />
             }
-            className="shadow-lg h-full flex flex-col justify-between"
+            className="shadow-lg rounded-lg flex flex-col justify-between"
           >
             <div>
-              <Card.Meta
-                title={blog.title}
-                description={`Category: ${blog.category} | By: ${blog.author}`}
-              />
+              <h2 className="text-xl font-bold text-gray-800">{blog.title}</h2>
+              <p className="text-sm text-gray-500">
+                {blog.date} | {blog.category} | By {blog.author}
+              </p>
             </div>
-            <button
-              onClick={() => navigate(`/blog/${blog.id}`)}
-              className="mt-4 bg-blue-500 text-white py-2 px-4 w-full hover:bg-blue-600"
+            <a
+              href={blog.id}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 bg-gradient-to-r from-blue-300 to-blue-500 
+             !text-white py-2 px-4 w-full rounded-md font-semibold 
+             hover:from-purple-500 hover:to-blue-500 
+             transition-all text-center block"
             >
               Read More
-            </button>
+            </a>
           </Card>
         ))}
       </div>
 
-      {/* Pagination Slider */}
+      {/* Pagination */}
       <div className="flex justify-center mt-6">
         <Pagination
           current={currentPage}

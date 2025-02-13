@@ -1,39 +1,49 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const blogData = [
   {
     id: 1,
-    title: "How To Get People To Like Industry.",
+    title: "How RCC Pipes are Revolutionizing Water Management",
     content:
-      "This blog provides insights on engaging with people in the industrial sector.",
+      "RCC pipes are transforming water management by providing durability, strength, and cost-effectiveness for large-scale projects.",
   },
   {
     id: 2,
-    title: "Why You Should Not Go To Industry.",
+    title: "The Future of Infrastructure Development in India",
     content:
-      "Discover the potential pitfalls of venturing into the industrial landscape.",
+      "With rapid urbanization, India's infrastructure sector is evolving with smart cities, sustainable construction, and modern RCC technologies.",
   },
   {
     id: 3,
-    title: "The Shocking Revelation of Industry.",
+    title: "Why Quality Matters: Choosing the Best RCC Pipes for Your Project",
     content:
-      "Unexpected facts about the industry sector revealed in this article.",
+      "Selecting high-quality RCC pipes ensures long-term performance, safety, and compliance with industry standards.",
   },
 ];
 
 function BlogDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const blog = blogData.find((post) => post.id === parseInt(id));
 
   if (!blog) {
-    return <h1>Blog not found!</h1>;
+    return <h1 className="text-center text-2xl font-bold">Blog not found!</h1>;
   }
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold">{blog.title}</h1>
-      <p>{blog.content}</p>
+    <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+      <h1 className="text-3xl font-extrabold text-gray-800">{blog.title}</h1>
+      <p className="mt-4 text-lg text-gray-600">{blog.content}</p>
+
+      <button
+        onClick={() => navigate(-1)}
+        className="mt-6 px-6 py-2 text-white font-semibold rounded-lg 
+                   bg-gradient-to-r from-blue-500 to-purple-500 
+                   hover:from-purple-500 hover:to-blue-500 transition-all"
+      >
+        Go Back
+      </button>
     </div>
   );
 }

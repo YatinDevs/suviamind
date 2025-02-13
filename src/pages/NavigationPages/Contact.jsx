@@ -46,7 +46,7 @@ const Contact = () => {
                 <iframe
                   title="Google Map"
                   className="w-full h-72 text-2xl rounded-md border border-gray-300 shadow-sm"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.679075699913!2d-0.13307128395952705!3d51.51185047963559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b2974982f4d%3A0x4b31dfb22f8fc8b1!2s62%20Dean%20St%2C%20London%20W1D%204QF%2C%20UK!5e0!3m2!1sen!2sus!4v1637930634813!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3795.3397927308296!2d73.9549263749955!3d20.76456478074188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddea3e79b15e27%3A0x30e792c6a7cbcb3e!2sGat%20No.%20211%2C%20At%20Post%3A%20Savaki(Lo)%2C%20Tal-Deola%2C%20Dist-Nashik!5e0!3m2!1sen!2sin!4v1707568399102!5m2!1sen!2sin"
                   allowFullScreen=""
                   loading="lazy"
                 />

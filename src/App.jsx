@@ -14,7 +14,6 @@ import About from "./pages/NavigationPages/About";
 import Product from "./pages/NavigationPages/Product";
 import Contact from "./pages/NavigationPages/Contact";
 import Blog from "./pages/NavigationPages/Blog";
-import Blog1 from "./components/Blog/Blog1";
 import ProjectsSection from "./pages/NavigationPages/ProjectsSection";
 function App() {
   const router = createBrowserRouter(
@@ -27,7 +26,6 @@ function App() {
         <Route path="gallery" element={<Gallery />} />
         <Route path="blog" element={<Blog />} />
         <Route path="contactus" element={<Contact />} />
-        <Route path="/blog1/:id" element={<Blog1 />} />
       </Route>
     )
   );
